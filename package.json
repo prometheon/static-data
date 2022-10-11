@@ -1,0 +1,16 @@
+{
+  "name": "car-models-data",
+  "version": "1.0.0",
+  "main": "index.json",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "repository": "https://github.com/prometheon/car-models-data",
+  "devDependencies": {
+    "@avto-dev/vehicle-logotypes": "2.6.0",
+    "csv-string": "4.1.1",
+    "mkdirp": "1.0.4",
+    "node-fetch": "2.6.7",
+    "us-car-models-data": "https://github.com/abhionlyone/us-car-models-data"
+  }
+}
