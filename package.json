@@ -1,5 +1,5 @@
 {
-  "name": "car-models-data",
+  "name": "@prometheon/car-models-data",
   "version": "1.0.0",
   "main": "index.json",
   "scripts": {

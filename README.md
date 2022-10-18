@@ -5,10 +5,10 @@
 Install:
 
 ```bash
-yarn add car-models-data@https://github.com/prometheon/car-models-data
+yarn add @prometheon/car-models-data
 ```
 
-Use:
+Use text data:
 
 ```js
 import cars from 'car-models-data' // (See «preview» paragraph)
@@ -18,10 +18,11 @@ const years = cars['Tesla']['Models S'].years // => [2012, 2013, 2014, ...]
 const logo = cars['Tesla']['Model S'].logo // => 'tesla.png'
 ```
 
-Logo (works with NextJS):
+Use logos (works with NextJS):
 
 ```jsx
-const img = require(`car-models-data/logos/${logo}`).default // => '/_next/static/.../64fa.png'
+const img = require(`car-models-data/logos/${logo}`).default
+console.log(img.src) // => '/_next/static/.../64fa.png'
 
 ...
 
