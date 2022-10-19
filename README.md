@@ -1,12 +1,28 @@
 # car-models-data
 
-## Usage
+## Installation
 
-Install:
+> To be able to use private [Github Packages](https://docs.github.com/en/packages/learn-github-packages/introduction-to-github-packages):
+>
+> 1. Go to [Developer Settings - Tokens](https://github.com/settings/tokens/new)
+> 2. Create a token with a scope: `read:packages`
+> 3. Copy your token
+>
+> Setup for npm:
+>
+> ```
+> npm config set @prometheon:registry https://npm.pkg.github.com
+> npm login --registry=https://npm.pkg.github.com
+> # use your token as password
+> ```
+>
+> Setup for yarn: [yarn documentation](https://yarnpkg.com/configuration/yarnrc#npmRegistries)
 
 ```bash
 yarn add @prometheon/car-models-data
 ```
+
+## Usage
 
 Use text data:
 
