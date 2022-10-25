@@ -1,8 +1,10 @@
-# car-models-data
+# `@prometheon/static-data`
 
 ## Installation
 
 > To be able to use private [Github Packages](https://docs.github.com/en/packages/learn-github-packages/introduction-to-github-packages):
+>
+> > NOTE: it is already done for our [prometheon/bedrock-fabric](https://github.com/prometheon/bedrock-fabric) repo, so only required for other repos.
 >
 > 1. Go to [Developer Settings - Tokens](https://github.com/settings/tokens/new)
 > 2. Create a token with a scope: `read:packages`
@@ -19,7 +21,7 @@
 > Setup for yarn: [yarn documentation](https://yarnpkg.com/configuration/yarnrc#npmRegistries)
 
 ```bash
-yarn add @prometheon/car-models-data
+yarn add @prometheon/static-data
 ```
 
 ## Usage
@@ -27,7 +29,7 @@ yarn add @prometheon/car-models-data
 Use text data:
 
 ```js
-import cars from 'car-models-data' // (See «preview» paragraph)
+import cars from 'static-data/cars' // (See «preview» paragraph)
 const makes = Object.keys(cars) // => [ 'Acura', 'Tesla', ... }
 const models = Object.keys(cars['Tesla']) // => [ 'Model S', 'Model X', ... ]
 const years = cars['Tesla']['Models S'].years // => [2012, 2013, 2014, ...]
@@ -37,7 +39,7 @@ const logo = cars['Tesla']['Model S'].logo // => 'tesla.png'
 Use logos (works with NextJS):
 
 ```jsx
-const img = require(`car-models-data/logos/${logo}`).default
+const img = require(`static-data/cars/logos/${logo}`).default
 console.log(img.src) // => '/_next/static/.../64fa.png'
 
 ...
