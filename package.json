@@ -12,9 +12,12 @@
   "devDependencies": {
     "@avto-dev/vehicle-logotypes": "2.6.0",
     "csv-string": "4.1.1",
+    "glob": "8.0.3",
     "jsdom": "20.0.1",
     "mkdirp": "1.0.4",
     "node-fetch": "2.6.7",
+    "promise-sequential": "1.1.1",
+    "temp": "0.9.4",
     "us-car-models-data": "https://github.com/abhionlyone/us-car-models-data"
   }
 }

@@ -2,7 +2,7 @@ const fetch = require('node-fetch')
 const jsdom = require('jsdom')
 const { writeFileSync } = require('fs')
 
-process.stdout.write('Downloading banks from Wikipedia... ')
+process.stdout.write('• Downloading banks from Wikipedia... ')
 const downloadingBanks = fetch('https://en.wikipedia.org/wiki/List_of_largest_banks_in_the_United_States')
   .then((r) => r.text())
   .then((html) => {
