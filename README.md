@@ -1,5 +1,9 @@
 # `@prometheon/static-data`
 
+## Requirements
+
+- node v16.14.2
+
 ## Installation
 
 > To be able to use private [Github Packages](https://docs.github.com/en/packages/learn-github-packages/introduction-to-github-packages):

@@ -6,19 +6,26 @@ process.stdout.write('• Downloading banks from Wikipedia... ')
 const downloadingBanks = fetch('https://en.wikipedia.org/wiki/List_of_largest_banks_in_the_United_States')
   .then((r) => r.text())
   .then((html) => {
-    try {
-      const { JSDOM } = jsdom
-      const dom = new JSDOM(html)
-      const banks = Array.from(
-        dom.window.document.querySelector('table tbody').querySelectorAll('td:nth-child(2)')
-      ).map((el) => el.textContent.trim())
-      return banks
-    } catch (err) {
-      throw new Error(`Cannot parse banks: ${err}`)
-    }
-  })
-  .catch(function (err) {
-    throw new Error('Cannot download banks from Wikipedia.')
+    const { JSDOM } = jsdom
+    const dom = new JSDOM(html)
+    const table = dom.window.document.querySelector('table tbody')
+    const names1 = Array.from(table.querySelectorAll('td:nth-child(2)')).map((el) => el.textContent.trim())
+    const names2 = Array.from(table.querySelectorAll('td:nth-child(2) > a:first-child')).map((el) => el.href)
+    const bankNames = names2.map((n, i) => {
+      if (n.includes('redlink=1')) {
+        return names1[i]
+      } else {
+        const name = decodeURIComponent(
+          n
+            .match(/\/([^\/]+)$/)?.[1]
+            ?.replace('_(United_States)', '')
+            ?.replaceAll('_', ' ')
+        )
+        const addedName = names1[i].includes(name) || name.includes(names1[i]) ? '' : ` (${names1[i]})`
+        return `${name}${addedName}`
+      }
+    })
+    return bankNames
   })
 
 Promise.all([downloadingBanks]).then((values) => {
